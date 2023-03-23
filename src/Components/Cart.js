@@ -169,7 +169,7 @@ export const Cart = () => {
             <br></br>
             {cartProducts.length > 0 && (
                 <div className='container-fluid'>
-                    <h1 className='text-center'>Cart</h1>
+                    <h1 className='text-center1'>Cart</h1>
                     <div className='products-box'>
                         <CartProducts cartProducts={cartProducts}/>
                     </div>

@@ -105,17 +105,35 @@ export const Home = (props) => {
         {id: 'Dresses', text: 'Dresses'},           
     ])
 
+    const [sizes]=useState([
+        {id:'All', text: 'All'},
+        {id: 'S', text: 'S'},
+        {id: 'M', text: 'M'},
+        {id: 'L', text: 'L'},
+        {id: 'XL', text: 'XL'},           
+    ])
+    
     // active class state
     const [active, setActive]=useState('');
 
     // category state
     const [category, setCategory]=useState('');
 
+     // category state
+     const [sizeCat, setSizeCat]=useState('');
+
     // handle change ... it will set category and active states
     const handleChange=(individualSpan)=>{
         setActive(individualSpan.id);
         setCategory(individualSpan.text);
         filterFunction(individualSpan.text);
+    }
+
+    // handle change ... it will set category and active states
+    const handleSizeChange=(individualSpan)=>{
+        setActive(individualSpan.id);
+        setCategory(individualSpan.text);
+        filterFunctionSize(individualSpan.text);
     }
 
     // filtered products state
@@ -125,6 +143,17 @@ export const Home = (props) => {
     const filterFunction = (text)=>{
         if(products.length>1){
             const filter=products.filter((product)=>product.league===text);
+            setFilteredProducts(filter);
+        }
+        else{
+            console.log('no products to filter')
+        } 
+    }
+
+    // filter function size
+    const filterFunctionSize = (text)=>{
+        if(products.length>1){
+            const filter=products.filter((product)=>product.size===text);
             setFilteredProducts(filter);
         }
         else{
@@ -146,12 +175,6 @@ export const Home = (props) => {
         <>
             <Navbar user={user} totalProducts={totalProducts}/>           
             <br></br>
-            <div>
-  {/* <iframe loading="lazy" style={{position: "absolute", width: "100%", height: "100%", top: "0", left: "0", border: "none" ,padding: "0",margin: "0"}}
-    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFdNP1BwZ8&#x2F;view?embed" allowFullScreen="allowfullscreen" allow="fullscreen">
-  </iframe> */}
-</div>
-{/* <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFdNP1BwZ8&#x2F;view?utm_content=DAFdNP1BwZ8&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">White, Green, and Blue Photographic Fashion Retail Website</a> */}
             <div className='container-fluid filter-products-main-box'>
                 <div className='filter-box' >
                     {/* <h6>Filter by category</h6>
@@ -171,9 +194,20 @@ export const Home = (props) => {
                         ))}
                     </div>
                     </div>
+                    <div class="dropdown">
+                    <button class="dropbtn">Filter by Size</button>
+                    <div class="dropdown-content">
+                        {sizes.map((individualSpan,index)=>(
+                            <a key={index} id={individualSpan.id}
+                            onClick={()=>handleSizeChange(individualSpan)}
+                            className={individualSpan.id===active ? active:'deactive'}>{individualSpan.id}</a>
+                        ))}
+                    </div>
+                    </div>
                 </div>
                 {filteredProducts.length > 0&&(
                   <div className='my-products'>
+                      <h1 className='text-center'>{category}</h1>
                       <a className="return" href="javascript:void(0)" onClick={returntoAllProducts} >Return to All Products</a>
                       <div className='products-box'>
                           {filteredProducts.map(individualFilteredProduct=>(
@@ -188,6 +222,7 @@ export const Home = (props) => {
                     <>
                         {products.length > 0&&(
                             <div className='my-products'>
+                                <h1 className='text-center'>Collection</h1>
                                 <div className='products-box'>
                                     <Products products={products} addToCart={addToCart}/>
                                 </div>

@@ -22,7 +22,7 @@ export const IndividualCartProduct = ({cartProduct}) => {
                 <img src={cartProduct.url} alt="product-img"/>
             </div>
             <div className='product-text title'>{cartProduct.title}</div>
-            <div className='product-text'>AED {cartProduct.price}</div>
+            <div className='product-text'>${cartProduct.price}</div>
             <div className='btn btn-danger btn-md cart-btn' onClick={handleCartProductDelete}>REMOVE</div>            
         </div>
     )

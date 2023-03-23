@@ -1,2 +1,2 @@
 # Grails
-Football Shirt Collecting, but Portable!
+Vintage, Streetwear and Sportswear fashion brand. All items Reused and Reloved!

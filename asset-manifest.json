@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/grailsF20EC/static/css/main.ff1789b4.css",
-    "main.js": "/grailsF20EC/static/js/main.c043dc78.js",
+    "main.js": "/grailsF20EC/static/js/main.db52a1ed.js",
     "static/js/787.2b6a8a3b.chunk.js": "/grailsF20EC/static/js/787.2b6a8a3b.chunk.js",
     "static/media/bg.png": "/grailsF20EC/static/media/bg.269ed3a940b2aa29cf9d.png",
     "static/media/BratsyScriptDemo.ttf": "/grailsF20EC/static/media/BratsyScriptDemo.22b1b659fe8d70182179.ttf",
     "static/media/logo.png": "/grailsF20EC/static/media/logo.335dfbb9998e4093b5d2.png",
     "index.html": "/grailsF20EC/index.html",
     "main.ff1789b4.css.map": "/grailsF20EC/static/css/main.ff1789b4.css.map",
-    "main.c043dc78.js.map": "/grailsF20EC/static/js/main.c043dc78.js.map",
+    "main.db52a1ed.js.map": "/grailsF20EC/static/js/main.db52a1ed.js.map",
     "787.2b6a8a3b.chunk.js.map": "/grailsF20EC/static/js/787.2b6a8a3b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ff1789b4.css",
-    "static/js/main.c043dc78.js"
+    "static/js/main.db52a1ed.js"
   ]
 }

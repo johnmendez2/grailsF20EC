@@ -106,7 +106,7 @@ export const Cart = () => {
     const handleToken = async(token)=>{
         //  console.log(token);
         const cart = {name: 'All Products', totalPricewShip}
-        const response = await axios.post('http://localhost:8080/checkout',{
+        const response = await axios.post('https://f20ecserver.onrender.com/checkout',{
             token,
             cart
         })

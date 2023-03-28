@@ -6,17 +6,17 @@
 
   #txt{
     font-family: 'Bratsy';
-    color: rgb(212, 186, 41);
+    color: rgb(255, 255, 255);
     -webkit-text-stroke: 1.2px black;
     font-size: 80px;
   }
 
   #label1{
     font-family: 'Bratsy';
-    color: rgb(212, 186, 41);
+    color: rgb(255, 255, 255);
     -webkit-text-stroke: 1.2px black;
     font-size: 50px;
-    cursor: default;
+    cursor: pointer;
   }
   #label2{
     font-family: 'Bratsy';
@@ -24,6 +24,13 @@
     -webkit-text-stroke: 1.2px black;
     font-size: 40px;
     cursor: default;
+  }
+  #label3{
+    font-family: 'Bratsy';
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 1.2px black;
+    font-size: 50px;
+    cursor: pointer;
   }
 
   .text-center{

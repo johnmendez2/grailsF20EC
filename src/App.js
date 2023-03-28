@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter ,Route, Routes, useNavigate} from 'react-router-dom'
+import {BrowserRouter as Router, Link, Route, Routes, useNavigate} from 'react-router-dom'
 import {Home} from './Components/Home'
 import {Login} from './Components/Login'
 import {Signup} from './Components/Signup'

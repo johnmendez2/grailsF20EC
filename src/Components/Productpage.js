@@ -125,12 +125,12 @@ export default function Productpage({product}){
         }else{
             const images = [
                 {
-                  original: prod.url2,
-                  thumbnail: prod.url2,
+                    original: prod.url,
+                    thumbnail: prod.url,
                 },
                 {
-                  original: prod.url,
-                  thumbnail: prod.url,
+                  original: prod.url2,
+                  thumbnail: prod.url2,
                 },
 
               ];

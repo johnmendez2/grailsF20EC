@@ -7,8 +7,8 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 import './styles.css';
 import { Modal } from './Modal';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 export const Cart = () => {
 
@@ -190,6 +190,7 @@ export const Cart = () => {
                             name='All Products'
                             amount={totalPrice * 100}
                         ></StripeCheckout>
+
                         <br></br>
                         <button type="submit" className='btn btn-success btn-md' onClick={()=>triggerModal()}>Pay cash on delivery</button>
                     </div>
@@ -203,6 +204,7 @@ export const Cart = () => {
                     hideModal={hideModal}
                 />
             )}              
+            <ToastContainer/>
         </>
     )
 }

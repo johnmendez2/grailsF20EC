@@ -114,7 +114,6 @@ export const Cart = () => {
         let {status}=response.data;
         console.log(status);
         if(status==='success'){
-            history('/');
             toast.success('Your order has been placed successfully', {
                 position: 'top-right',
                 autoClose: 5000,

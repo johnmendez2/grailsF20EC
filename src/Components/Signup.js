@@ -14,15 +14,25 @@ export const Signup = () => {
     const [errorMsg, setErrorMsg]=useState('');
     const [successMsg, setSuccessMsg]=useState('');
 
+    const xorCipher = (str, key) => {
+        let result = '';
+        for (let i = 0; i < str.length; i++) {
+          result += String.fromCharCode(key ^ str.charCodeAt(i));
+        }
+        return result;
+      };
+
     const handleSignup=(e)=>{
         e.preventDefault();
+        const encryptedPassword = xorCipher(password, 42); // Encrypt the password using the XOR cipher
         // console.log(fullName, email, password);
-        auth.createUserWithEmailAndPassword(email,password).then((credentials)=>{
+        auth.createUserWithEmailAndPassword(email,encryptedPassword).then((credentials)=>{
             console.log(credentials);
             fs.collection('users').doc(credentials.user.uid).set({
+                SignupDate: new Date().toLocaleDateString(),
                 FullName: fullName,
                 Email: email,
-                Password: password
+                Password: encryptedPassword
             }).then(()=>{
                 setSuccessMsg('Signup Successfull. You will now automatically get redirected to Login');
                 setFullname('');

@@ -14,17 +14,27 @@ export const Login = () => {
     const [errorMsg, setErrorMsg]=useState('');
     const [successMsg, setSuccessMsg]=useState('');
 
+    const xorCipher = (str, key) => {
+        let result = '';
+        for (let i = 0; i < str.length; i++) {
+          result += String.fromCharCode(key ^ str.charCodeAt(i));
+        }
+        return result;
+      };
+
     const handleLogin=(e)=>{
         e.preventDefault();
         // console.log(email, password);
-        auth.signInWithEmailAndPassword(email,password).then(()=>{
+        const encryptedPassword = xorCipher(password, 42); // Encrypt the password using the XOR cipher
+        console.log(encryptedPassword)
+        auth.signInWithEmailAndPassword(email,encryptedPassword).then(()=>{
             setSuccessMsg('Login Successfull. You will now automatically get redirected to Home page');
             setEmail('');
             setPassword('');
             setErrorMsg('');
             setTimeout(()=>{
                 setSuccessMsg('');
-                history('/');
+                history('/items');
             },3000)
         }).catch(error=>setErrorMsg(error.message));
     }

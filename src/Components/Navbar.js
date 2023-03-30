@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../logo.png'
-import Icon from 'react-icons-kit';
-import { shoppingCart } from 'react-icons-kit/feather/shoppingCart'
-import StripeCheckout from 'react-stripe-checkout';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../Config/config';
+import { fs } from '../Config/config';
 import '../index.css';
 import './styles.css';
 export const Navbar = ({user, totalProducts}) => {

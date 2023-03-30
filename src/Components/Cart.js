@@ -197,7 +197,9 @@ export const Cart = () => {
                 </div>
             )}
             {cartProducts.length < 1 && (
-                <div id='label1'>Your cart could use some items!</div>
+                <div className='text-center d-flex justify-content-center align-items-center'>
+                <h2 id='label1'>Your cart is currently empty</h2>
+            </div>
             ) }
             {showModal===true&&(
                 <Modal TotalPrice={totalPrice}

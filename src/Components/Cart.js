@@ -32,7 +32,7 @@ export const Cart = () => {
             auth.onAuthStateChanged(user=>{
                 if(user){
                     fs.collection('users').doc(user.uid).get().then(snapshot=>{
-                        setUser(snapshot.data().Name);
+                        setUser(snapshot.data().FullName);
                     })
                 }
                 else{

@@ -42,7 +42,7 @@ export const Modal = ({TotalPrice,hideModal}) => {
         hideModal();
         Swal.fire({
             title: 'Order Placed!',
-            text: 'Your package will be shipped out shortly. Follow @johnsfootballshirts on Instagram for updates!',
+            text: 'Your package will be shipped out shortly. Follow @grails on Instagram for updates!',
             icon: 'success',
             confirmButtonText: 'Done'
           })

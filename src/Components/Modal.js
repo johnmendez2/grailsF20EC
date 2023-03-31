@@ -26,7 +26,7 @@ export const Modal = ({TotalPrice,hideModal}) => {
         const uid = auth.currentUser.uid;
         const userData = await fs.collection('users').doc(uid).get();
         await fs.collection('Buyer-Personal-Info').add({
-            Name: userData.data().Name,
+            Name: userData.data().FullName,
             Email: userData.data().Email,
             CellNo: cell,
             ResidentialAddress: residentialAddress,
